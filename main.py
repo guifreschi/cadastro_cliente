@@ -3,6 +3,7 @@ import time
 from colorama import init, Fore, Style
 import adicionar_cliente as ac
 import listar_cliente as lc
+from atualizar_info import atualizar_info as atti
 
 init()
 
@@ -51,7 +52,22 @@ def menu():
             lc.listar_cliente()
         
         elif choice == 3:
-            pass
+            continuar = ' '
+            while continuar != 's' or continuar != 'n':
+                clear_terminal()
+                msg_manner("Atualizar informações!")
+                print("CAMPOS PARA ATUALIZAR:\nNome, Idade, Endereço, Telefone")
+                print()
+                nome = input("Nome do Cliente: ")
+                campo = input("Campo: ").capitalize()
+                if campo == "Idade":
+                    nova_info = int(input("Nova informação: "))
+                else:
+                    nova_info = str(input("Nova informação: "))
+                atti(nome, campo, nova_info)
+                continuar = input("Deseja atualizar mais informações [S/N]? ").lower()
+                if continuar == 'n':
+                    break
         
         elif choice == 4:
             pass
