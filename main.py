@@ -22,13 +22,24 @@ def menu():
     while True:
         clear_terminal()
         manner()
+        incorrect_choice = False
         # opções
         print(Fore.GREEN + "[1] - Adicionar Cliente(s)")
         print("[2] - Listar Cliente(s)")
         print("[3] - Atualizar Info(s)")
         print(Fore.YELLOW + "[4] - Remover Cliente(s)")
         print(Fore.RED + "[5] - SAIR" + Style.RESET_ALL)
-        choice = int(input(">."))
+        choice = str(input(">."))
+        
+        # Verifica se o usuário informou um número
+        if choice.isnumeric():
+            choice = int(choice)
+            incorrect_choice = False
+        else:
+            print(Fore.RED + "Opção Inválida!" + Style.RESET_ALL)
+            choice = 0
+            incorrect_choice = True
+            time.sleep(0.5)
         
             
         if choice == 1:
@@ -47,8 +58,9 @@ def menu():
             break
         
         else:
-            print(Fore.RED + "Número Inválido!" + Style.RESET_ALL)
-            time.sleep(0.5)
+            if not incorrect_choice:
+                print(Fore.RED + "Número Inválido!" + Style.RESET_ALL)
+                time.sleep(0.5)
 
     
 menu()
