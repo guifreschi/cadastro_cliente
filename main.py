@@ -4,6 +4,7 @@ from colorama import init, Fore, Style
 import adicionar_cliente as ac
 import listar_cliente as lc
 from atualizar_info import atualizar_info as atti
+from remover_cliente import remover_cliente as rc
 
 init()
 
@@ -53,7 +54,7 @@ def menu():
         
         elif choice == 3:
             continuar = ' '
-            while continuar != 's' or continuar != 'n':
+            while continuar != 'n':
                 clear_terminal()
                 msg_manner("Atualizar informações!")
                 print("CAMPOS PARA ATUALIZAR:\nNome, Idade, Endereço, Telefone")
@@ -70,7 +71,7 @@ def menu():
                     break
         
         elif choice == 4:
-            pass
+            rc()
         
         elif choice == 5:
             break

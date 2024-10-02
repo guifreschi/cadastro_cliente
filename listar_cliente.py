@@ -24,4 +24,4 @@ def listar_cliente():
         for cliente in sorted(clientes, key=lambda cliente: cliente["Nome"]):
             print(f"{cliente['Nome']}: {cliente['Idade']} anos. {cliente['Endereço']}. Telefone:{cliente['Telefone']}.")
 
-    input("Dê um Enter para sair...")
+    input("Dê um Enter para continuar...")
