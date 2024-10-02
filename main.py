@@ -2,6 +2,7 @@ import os
 import time
 from colorama import init, Fore, Style
 import adicionar_cliente as ac
+import listar_cliente as lc
 
 init()
 
@@ -47,7 +48,7 @@ def menu():
             ac.adicionar_cliente()
         
         elif choice == 2:
-            pass
+            lc.listar_cliente()
         
         elif choice == 3:
             pass
